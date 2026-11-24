@@ -1,0 +1,1 @@
+function e(e){return e.includes(`差评如潮`)||e.includes(`多半差评`)?`#a34c25`:e.includes(`褒贬不一`)?`#b9a074`:e.includes(`暂无`)?`#666`:`#66c0f4`}function t(e){return e===`新游`?`#e05a4e`:`#4caf7d`}function n(e){return e}function r(e){return e.replace(/下载$/,``)}export{t as i,n,e as r,r as t};

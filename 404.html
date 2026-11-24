@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gamefind 觅游</title>
+    <script>
+      /**
+       * GitHub Pages SPA 回退技巧：
+       * Pages 服务器对未命中的路径返回本文件（404 状态码），此脚本把当前路径
+       * 编码到 ?/xxx 查询串后跳回站点根，index.html 里的入口脚本再还原路径。
+       * 例：/games/game/717 → /games/?/game/717 → 还原为 /games/game/717
+       */
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+  </head>
+  <body>
+    <!-- 无 JS 环境的兜底入口 -->
+    <noscript><a href="/">返回首页</a></noscript>
+  </body>
+</html>
